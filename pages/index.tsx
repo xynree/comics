@@ -1,13 +1,19 @@
-import type { NextPage } from 'next'
+import comics_sorter from '../helpers/comics_sorter'
+import Main from '../components/Main';
+import client from '../cms/client';
 
-const Home: NextPage = () => {
+export default function index({ comics }) {
   return (
-    <div className='flex justify-center font-blue-400 font-bold text-6xl'>
-      hello
-       : ))
-
-    </div>
-  )
+    <Main comics={comics}/>
+  );
 }
 
-export default Home
+export async function getStaticProps() {
+  let comics = await client.fetch(`*[_type == 'comic']`)
+ 
+  return {
+    props: {
+      comics: comics_sorter(comics),
+    },
+  };
+}
