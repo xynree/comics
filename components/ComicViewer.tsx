@@ -1,10 +1,11 @@
 import { getSrcFromImg } from "../cms/imageHelpers";
 
-const { container, comicTitle, comicView, comicDesc} = {
-  container: "flex flex-col gap-4 overflow-auto no-scrollbar",
+const { container, comicTitle, comicView, comicDesc, comicStyle} = {
+  container: "flex h-full flex-col gap-4 overflow-auto no-scrollbar",
   comicTitle: "text-4xl p-6 text-center tracking-widest",
   comicView: "w-75 m-auto flex flex-col gap-4",
-  comicDesc: 'text-center text-1xl'
+  comicDesc: 'text-center text-1xl',
+  comicStyle: 'shadow-xl'
 };
 
 const ComicViewer = ({ comic }) => {
@@ -15,7 +16,7 @@ const ComicViewer = ({ comic }) => {
       <div className={comicTitle}>{title}</div>
       <div className={comicView}>
         {images?.map((image) => (
-          <img key={image._key} src={getSrcFromImg(image)} width={400} />
+          <img key={image._key} src={getSrcFromImg(image)} width={500} className={comicStyle} />
         ))}
         {description && <p className={comicDesc}>{description}</p>}
       </div>
