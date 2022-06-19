@@ -8,7 +8,7 @@ const { container, comicTitle, comicView, comicDesc, comicStyle} = {
   comicTitle: "text-3xl text-center [letter-spacing:25px]",
   comicView: "w-4/5 h-auto xl:w-3/5  m-auto flex flex-col justify-start items-center gap-4 p-2",
   comicDesc: "text-center font-nw-thin text-sm",
-  comicStyle: "shadow-xl w-full h-auto",
+  comicStyle: "shadow-xl w-full h-auto rounded-lg",
 };
 
 const ComicViewer = ({ comic, navigate }) => {
@@ -24,6 +24,7 @@ const ComicViewer = ({ comic, navigate }) => {
             key={image._key}
             src={getSrcFromImg(image)}
             className={comicStyle}
+
           />
         ))}
       </div>

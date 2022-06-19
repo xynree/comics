@@ -1,6 +1,6 @@
 const {navigation, buttons} = {
   navigation: 'pl-4 pr-4 w-full flex gap-12 justify-between items-center font-nw  transition-all',
-  buttons: 'text-sm w-36 hover:[font-nw-thin] pt-2 pb-2 rounded-full hover:shadow-sm bg-[#FEFAEE]  transition-all'
+  buttons: 'text-xs w-36 hover:[font-nw-thin] pt-2 pb-2 rounded-full hover:underline bg-[#FEFAEE]  transition-all'
 }
 
 const NavigationBtns = ({navigate}) => {
