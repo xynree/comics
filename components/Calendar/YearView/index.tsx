@@ -2,7 +2,6 @@ import DayBubble from "./DayBubble";
 import { useState } from "react";
 
 const months = [
-  "null",
   "jan",
   "feb",
   "mar",
@@ -16,23 +15,30 @@ const months = [
   "nov",
   "dec",
 ];
+
 const comicsByMonth = (comics) => {
   const map = new Map();
   comics.forEach((comic) => {
     const [mo, day] = comic.title.split(".");
-    const month = months[mo];
+    const month = months[mo-1];
     if (!map.has(month)) {
       map.set(month, [comic]);
     } else {
       map.set(month, [...map.get(month), comic]);
     }
   });
-  return Array.from(map).reverse();
+
+  const sortedComics = Array.from(map).reverse().map((month) => {
+    const sorted = month[1].sort((prev,curr) => {
+      return Number(prev.title.split('.')[1]) < Number(curr.title.split('.')[1]) ? -1:1
+    })
+    return [month[0], sorted]
+  });
+  return sortedComics
 };
 
 const YearView = ({ comics, year, setActiveComic }) => {
   const [comicsByMo, setComicsByMo] = useState(comicsByMonth(comics));
-
   return (
     <div className="flex flex-col" key={year}>
       <div className="YEAR">
