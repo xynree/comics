@@ -5,7 +5,7 @@ const {about,link} = {
 const About = () => {
   return (
     <p className={about}>
-      This is an ongoing diary comics project by me (Xinrui) ! Find me here ->   <a className={link} href='http://instagram.com/xynree'>insta</a>   <a className={link} href='http://github.com/xynree'>github</a>   <a className={link} href='mailto:xynree@gmail.com'>email </a>
+      This is an ongoing diary comics project by me (Xinrui) ! Find me here :  <a className={link} href='http://instagram.com/xynree'>insta</a>   <a className={link} href='http://github.com/xynree'>github</a>   <a className={link} href='mailto:xynree@gmail.com'>email </a>
     </p>
   );
 }
