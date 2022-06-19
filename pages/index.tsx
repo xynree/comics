@@ -2,6 +2,7 @@ import comics_sorter from '../helpers/comics_sorter'
 import Main from '../components/Main';
 import client from '../cms/client';
 
+
 export default function index({ comics }) {
   return (
     <Main comics={comics}/>

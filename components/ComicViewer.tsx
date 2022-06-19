@@ -1,15 +1,18 @@
 import { getSrcFromImg } from "../cms/imageHelpers";
+import {useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 const { container, comicTitle, comicView, comicDesc, comicStyle} = {
   container: "flex h-full flex-col gap-4 overflow-auto no-scrollbar",
-  comicTitle: "text-4xl p-6 text-center tracking-widest",
-  comicView: "w-75 m-auto flex flex-col gap-4",
+  comicTitle: "text-4xl p-3 text-center tracking-widest",
+  comicView: "w-75 m-auto flex flex-col gap-4 p-2",
   comicDesc: 'text-center text-1xl',
   comicStyle: 'shadow-xl'
 };
 
 const ComicViewer = ({ comic }) => {
   const { images, title, description } = comic;
+
 
   return (
     <div className={container}>
