@@ -19,7 +19,7 @@ const Main = ({comics}) => {
 
   return (
     <main className="flex flex-col md:flex-row w-screen h-screen font-nw-bold">
-      <div className="w-full h-screen bg-[#FEFAEE] md:w-2/3 md:h-full md:bg-white">
+      <div className="w-full h-screen overflow-auto no-scrollbar bg-[#FEFAEE] md:w-2/3 md:h-full md:bg-white">
         {comic && <ComicViewer comic={comic} navigate={navigate} />}
       </div>
       <div className="hidden md:block md:w-1/3 md:h-full">

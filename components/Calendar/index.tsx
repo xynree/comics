@@ -21,7 +21,7 @@ const Calendar = ({ comics, setActiveComic }) => {
 
   return (
     <div className="h-screen bg-[#FEFAEE] overflow-auto no-scrollbar">
-      <div className="p-5 pl-10">
+      <div className="p-5 pl-16">
         {Object.keys(splitComics).slice().reverse().map((year) => (
     <YearView key={year} year={year} setActiveComic={setActiveComic} comics={splitComics[year]}/>
         ))}

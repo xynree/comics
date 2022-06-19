@@ -1,11 +1,10 @@
 import { getSrcFromImg } from "../../cms/imageHelpers";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
+import About from '../About'
 import NavigationBtns from "./NavigationBtns";
 
-const { container, comicTitle, comicView, comicDesc, comicStyle, spacer } = {
+const { container, comicTitle, comicView, comicDesc, comicStyle} = {
   container:
-    "flex h-full pt-12 pb-12 flex-col justify- gap-8 overflow-auto no-scrollbar",
+    "flex h-full pt-10 pb-12 flex-col justify- gap-6 ",
   comicTitle: "text-3xl text-center [letter-spacing:25px]",
   comicView: "w-4/5 h-auto xl:w-3/5  m-auto flex flex-col justify-start items-center gap-4 p-2",
   comicDesc: "text-center font-nw-thin text-sm",
@@ -29,6 +28,7 @@ const ComicViewer = ({ comic, navigate }) => {
         ))}
       </div>
       {description && <p className={comicDesc}>{description}</p>}
+     {images && <About />}
 
     </div>
   );
