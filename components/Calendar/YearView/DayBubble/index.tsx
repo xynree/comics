@@ -10,7 +10,7 @@ const COLORS = [
 const randomColor = () => COLORS[Math.floor(Math.random() * COLORS.length)];
 
 const DayBubble = ({comic, setActiveComic}) => {
-  const [color, setColor] = useState(randomColor())
+  const [color,] = useState(randomColor())
 
   return (
     <button

@@ -11,3 +11,4 @@ export default (comics) =>  comics.sort((prev, curr) => {
     if (prevArr[i] < currArr[i]) return -1;
     if (prevArr[i] > currArr[i]) return 1;
   }})
+  

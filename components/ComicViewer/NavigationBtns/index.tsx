@@ -11,7 +11,6 @@ const NavigationBtns = ({navigate}) => {
      <button className={buttons} onClick={prev}>prev</button>
      <button className={buttons} onClick={home}>home</button>
      <button className={buttons} onClick={next}>next</button>
-
     </div>
   );
 }
