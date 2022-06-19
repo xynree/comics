@@ -47,7 +47,7 @@ const YearView = ({ comics, year, setActiveComic }) => {
       <div className="MONTHS and BUBLES">
           {comicsByMo.map(([mo, comics]) => (
             <div className="flex justify-start " key={`${year}-${mo}`}>
-              <div className="w-12 font-bold flex-shrink-0  right-outline pt-2">{mo}</div>
+              <div className="w-12 font-bold flex-shrink-0  right-outline pt-2 ">{mo}</div>
               <div className='bg-black w-[1px]'></div>
               <div className='flex flex-wrap ml-4 pb-5'>
               {

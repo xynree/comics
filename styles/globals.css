@@ -2,6 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: northwoods;
+  src: url(Northwoods-Light.otf);
+}
+
+@font-face {
+  font-family: northwoods;
+  src: url(Northwoods-Thin.ttf);
+  font-weight: 100
+}
+
+@font-face {
+  font-family: northwoods;
+  src: url(Northwoods-bold.otf);
+  font-weight: bold
+}
+
+.font-nw {
+  font-family: northwoods, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-weight: normal;
+}
+
+.font-nw-bold {
+  font-family: northwoods, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-weight:bold;
+}
+
+.font-nw-thin {
+  font-family: northwoods, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-weight:300;
+
+}
+
 html,
 body {
   padding: 0;

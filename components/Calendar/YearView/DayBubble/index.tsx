@@ -15,10 +15,10 @@ const DayBubble = ({comic, setActiveComic}) => {
   return (
     <button
     type="button"
-    className={`rounded-full w-10 h-10 ${color} transition-all hover:opacity-90 hover:text-white text-slate-100/0 text-xs m-0.5`  }
+    className={`rounded-full w-8 h-8 ${color} transition-all hover:opacity-90 hover:text-white text-slate-100/0 text-xs m-0.5 `  }
     onClick={() => setActiveComic(comic)}
   >
-    <p className="">
+    <p className="pt-0.5">
       {comic.title.split('.')[1]}
     </p>
   </button>
