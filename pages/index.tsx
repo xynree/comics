@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import comics_sorter from '../helpers/comics_sorter'
 import Main from '../components/Main';
 import client from '../cms/client';
