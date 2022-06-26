@@ -23,5 +23,6 @@ export async function getStaticProps() {
     props: {
       comics: comics_sorter(comics),
     },
+    revalidate: 3600,
   };
 }
