@@ -1,5 +1,5 @@
 const {about,link} = {
-  about: 'text-center mt-4 bg-white md:bg-[#e5e7eb] font-nw-thin text-xs p-8 ',
+  about: 'text-center mt-1 bg-white md:bg-[#ebeae4] font-nw-thin text-xs p-8 ',
   link: 'font-bold hover:opacity-50 transition-all'
 }
 const About = () => {
