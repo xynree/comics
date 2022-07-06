@@ -6,7 +6,7 @@ const { container, comicTitle, comicView, comicDesc, comicStyle} = {
   container:
     "flex h-full pt-10 flex-col justify-between gap-6 ",
   comicTitle: "text-3xl text-center [letter-spacing:25px]",
-  comicView: "w-full md:w-4/5 h-auto xl:w-3/5  m-auto flex flex-col justify-start items-center gap-4",
+  comicView: "w-full md:w-4/5 transition-all h-auto xl:w-3/5  m-auto flex flex-col justify-start items-center gap-4",
   comicDesc: "text-center text-sm p-4  font-nw",
   comicStyle: "shadow-xl w-full h-auto md:rounded-lg",
 };
