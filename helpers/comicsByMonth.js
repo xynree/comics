@@ -1,19 +1,6 @@
-const months = [
-  "jan",
-  "feb",
-  "mar",
-  "apr",
-  "may",
-  "jun",
-  "jul",
-  "aug",
-  "sep",
-  "oct",
-  "nov",
-  "dec",
-];
+import months from './months';
 
-export default (comics) => {
+ const comicsByMonth = (comics) => {
   const map = new Map();
   comics.forEach((comic) => {
     const [mo, day] = comic.title.split(".");
@@ -32,3 +19,5 @@ export default (comics) => {
   });
   return sortedComics
 };
+
+export default comicsByMonth;
