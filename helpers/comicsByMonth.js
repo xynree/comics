@@ -1,34 +1,32 @@
-const months = [
-  "jan",
-  "feb",
-  "mar",
-  "apr",
-  "may",
-  "jun",
-  "jul",
-  "aug",
-  "sep",
-  "oct",
-  "nov",
-  "dec",
-];
+import months from "../data/months";
 
-export default (comics) => {
+/**
+ * @param {array} comics array of comics by year
+ * @returns {[string, array][]} sorted 2D array of comics in format ['sep', [{...}]][]
+ */
+const comicsByMonth = (comics) => {
   const map = new Map();
   comics.forEach((comic) => {
     const [mo, day] = comic.title.split(".");
-    const month = months[mo-1];
+    const month = months[mo - 1];
     if (!map.has(month)) {
       map.set(month, [comic]);
     } else {
       map.set(month, [...map.get(month), comic]);
     }
   });
-  const sortedComics = Array.from(map).reverse().map((month) => {
-    const sorted = month[1].sort((prev,curr) => {
-      return Number(prev.title.split('.')[1]) < Number(curr.title.split('.')[1]) ? -1:1
-    })
-    return [month[0], sorted]
-  });
-  return sortedComics
+  const sortedComics = Array.from(map)
+    .reverse()
+    .map((month) => {
+      const sorted = month[1].sort((prev, curr) => {
+        return Number(prev.title.split(".")[1]) <
+          Number(curr.title.split(".")[1])
+          ? -1
+          : 1;
+      });
+      return [month[0], sorted];
+    });
+  return sortedComics;
 };
+
+export default comicsByMonth;
