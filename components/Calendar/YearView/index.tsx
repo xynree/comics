@@ -31,7 +31,7 @@ const YearView = ({ comics, year, setActiveComic }) => {
               {mo}
             </button>
             <div className="bg-black w-[1px]"></div>
-            <div className="flex flex-wrap ml-4 pb-5">
+            <div className="flex flex-wrap ml-4 mb-2 mt-2 items-center">
               {comics.map((comic) => (
                 <DayBubble
                   comic={comic}
