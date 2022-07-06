@@ -1,17 +1,14 @@
 import DayBubble from "./DayBubble";
-import { useState } from "react";
 import comicsByMonth from "../../../helpers/comicsByMonth";
-import comicsInMo from '../../../helpers/comicsInMo';
-import months from '../../../helpers/months';
+import comicsInMo from "../../../helpers/comicsInMo";
 
 const YearView = ({ comics, year, setActiveComic }) => {
-
   const navigateToYr = () => {
     setActiveComic(comics[0]);
   };
 
   const navigateToMo = (mo) => {
-    setActiveComic(comicsInMo(comics, mo)[0])
+    setActiveComic(comicsInMo(comics, mo)[0]);
   };
 
   return (
