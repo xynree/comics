@@ -18,8 +18,16 @@ const comicsByMonth = (comics:Comic[]):MonthGroup[] => {
       map.set(month, [...map.get(month), comic]);
     }
   });
+
+
   const sortedComics:MonthGroup[] = Array.from(map)
     .reverse()
+    .sort((prev,curr) => {
+      return months.indexOf(prev[0]) <
+          months.indexOf(curr[0])
+          ? -1
+          : 1;
+    })
     .map((month) => {
       const sorted = month[1].sort((prev, curr) => {
         return Number(prev.title.split(".")[1]) <
