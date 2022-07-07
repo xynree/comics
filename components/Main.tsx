@@ -1,21 +1,33 @@
-import ComicViewer from './ComicViewer';
-import Calendar from './Calendar';
-import { useState } from 'react'
+import ComicViewer from "./ComicViewer";
+import Calendar from "./Calendar";
+import { useState } from "react";
+import { Comic } from "../types/types";
 
-const Main = ({comics}) => {
-  const [comic, setActiveComic] = useState(comics[comics.length-1])
+interface Props {
+  comics: Comic[];
+}
+
+const Main = ({ comics }: Props) => {
+  const [comic, setActiveComic] = useState(comics[comics.length - 1]);
   const navigate = [
-    ()=>{ 
-      const foundComicIndex = comics.findIndex((comicDir) => comicDir._id === comic._id);
-      console.log(foundComicIndex)
-      if (foundComicIndex && comics[foundComicIndex-1]) setActiveComic(comics[foundComicIndex-1])
+    (): void => {
+      const foundComicIndex = comics.findIndex(
+        (comicDir) => comicDir._id === comic._id
+      );
+      if (foundComicIndex && comics[foundComicIndex - 1])
+        return setActiveComic(comics[foundComicIndex - 1]);
     },
-    ()=>{ setActiveComic(comics[comics.length-1])},
-    ()=>{
-      const foundComicIndex = comics.findIndex((comicDir) => comicDir._id === comic._id);
-      if (foundComicIndex && comics[foundComicIndex+1]) setActiveComic(comics[foundComicIndex+1])
+    (): void => {
+      return setActiveComic(comics[comics.length - 1]);
     },
-  ]
+    (): void => {
+      const foundComicIndex = comics.findIndex(
+        (comicDir) => comicDir._id === comic._id
+      );
+      if (foundComicIndex && comics[foundComicIndex + 1])
+        return setActiveComic(comics[foundComicIndex + 1]);
+    },
+  ];
 
   return (
     <main className="flex flex-col md:flex-row w-screen h-screen font-nw-bold">

@@ -1,5 +1,4 @@
 
-
 export interface Comic {
 description: string,
 images: Image[],

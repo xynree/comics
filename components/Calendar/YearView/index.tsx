@@ -1,15 +1,19 @@
 import DayBubble from "./DayBubble";
 import comicsByMonth from "../../../helpers/comicsByMonth";
 import filterByMonth from "../../../helpers/filterByMonth";
+import { Dispatch, SetStateAction } from "react";
+import { Comic } from "../../../types/types";
+import { monthsType } from "../../../data/months";
 
-const YearView = ({ comics, year, setActiveComic }) => {
-  const navigateToYr = () => {
-    setActiveComic(comics[0]);
-  };
+interface Props {
+  comics: Comic[],
+  year: string,
+  setActiveComic: Dispatch<SetStateAction<Comic>>
+}
+const YearView = ({ comics, year, setActiveComic }:Props) => {
+  const navigateToYr = () => setActiveComic(comics[0]);
 
-  const navigateToMo = (mo) => {
-    setActiveComic(filterByMonth(comics, mo)[0]);
-  };
+  const navigateToMo = (mo:monthsType) => setActiveComic(filterByMonth(comics, mo)[0]);
 
   return (
     <div className="flex flex-col" key={year}>
@@ -22,7 +26,7 @@ const YearView = ({ comics, year, setActiveComic }) => {
         </button>
       </div>
       <div>
-        {comicsByMonth(comics).map(([mo, comics]) => (
+        {comicsByMonth(comics).map(([mo, comics]:[monthsType, Comic[]]) => (
           <div className="flex justify-start " key={`${year}-${mo}`}>
             <button
               className="w-12 font-bold flex-shrink-0  right-outline pt-2 hover:text-red-300 transition-all"

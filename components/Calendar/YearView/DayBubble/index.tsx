@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
+import { Comic } from '../../../../types/types';
 
 const COLORS = [
   'bg-[#869D89]',
@@ -9,7 +10,11 @@ const COLORS = [
 ];
 const randomColor = () => COLORS[Math.floor(Math.random() * COLORS.length)];
 
-const DayBubble = ({comic, setActiveComic}) => {
+interface Props {
+  comic: Comic,
+  setActiveComic: Dispatch<SetStateAction<Comic>>
+}
+const DayBubble = ({comic, setActiveComic}:Props) => {
   const [color,] = useState(randomColor())
 
   return (

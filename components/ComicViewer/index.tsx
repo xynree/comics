@@ -1,6 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import { getSrcFromImg } from "../../cms/imageHelpers";
 import About from "../About";
 import NavigationBtns from "./NavigationBtns";
+import { Comic } from '../../types/types';
 
 const { container, comicTitle, comicView, comicDesc, comicStyle } = {
   container: "flex h-full pt-10 flex-col justify-between gap-6 ",
@@ -11,7 +13,12 @@ const { container, comicTitle, comicView, comicDesc, comicStyle } = {
   comicStyle: "shadow-xl w-full h-auto md:rounded-lg",
 };
 
-const ComicViewer = ({ comic, navigate }) => {
+interface Props {
+  comic: Comic,
+  navigate: (()=>void)[]
+}
+
+const ComicViewer = ({ comic, navigate }: Props) => {
   const { images, title, description } = comic;
 
   return (
@@ -20,7 +27,6 @@ const ComicViewer = ({ comic, navigate }) => {
       <div className={comicView}>
         <NavigationBtns navigate={navigate} />
         {images?.map((image) => (
-          // eslint-disable-next-line @next/next/no-img-element
           <img
             key={image._key}
             alt={title}

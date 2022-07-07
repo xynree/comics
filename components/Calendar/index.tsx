@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import YearView from "./YearView";
 import comicsByYear from '../../helpers/comicsByYear';
+import { Comic } from '../../types/types';
 
-const Calendar = ({ comics, setActiveComic }) => {
+interface Props {
+  comics: Comic[],
+  setActiveComic: Dispatch<SetStateAction<Comic>>
+}
+const Calendar = ({ comics, setActiveComic }:Props) => {
   const [splitComics,] = useState(comicsByYear(comics));
 
   return (
