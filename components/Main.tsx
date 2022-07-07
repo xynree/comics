@@ -24,7 +24,7 @@ const Main = ({ comics }: Props) => {
       const foundComicIndex = comics.findIndex(
         (comicDir) => comicDir._id === comic._id
       );
-      if (foundComicIndex && comics[foundComicIndex + 1])
+      if (foundComicIndex < comics.length-1 && comics[foundComicIndex + 1])
         return setActiveComic(comics[foundComicIndex + 1]);
     },
   ];
