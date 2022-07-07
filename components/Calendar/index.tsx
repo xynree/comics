@@ -9,7 +9,6 @@ interface Props {
 }
 const Calendar = ({ comics, setActiveComic }:Props) => {
   const [splitComics,] = useState(comicsByYear(comics));
-
   return (
     <div className="h-screen bg-[#FEFAEE] overflow-auto no-scrollbar">
       <div className="p-5 pl-16 pr-16">
