@@ -215,14 +215,43 @@ export const five: Comic = {
   title: "7.6.22",
 };
 
+export const six:Comic = {
+  "_createdAt": "2022-06-18T04:22:40Z",
+  "_id": "a6b3e7653380fbc2ac23cd4110bd8aedaeab8bfef850ce380ae8be5dcecb16ae",
+  "_rev": "vOYBmzG0R4TianHAkxqsdI",
+  "_type": "comic",
+  "_updatedAt": "2022-06-18T04:27:59Z",
+  "description": "",
+  "images": [
+    {
+      "_key": "Jy5Kfozr",
+      "_type": "image",
+      "asset": {
+        "_ref": "image-2960d10f54877dbe8ea72438132cd7ed32644461-2328x2947-jpg",
+        "_type": "reference"
+      }
+    },
+    {
+      "_key": "6nHxnPOt",
+      "_type": "image",
+      "asset": {
+        "_ref": "image-d9a532ffdee54bf51d1fa1d73d1ea2db2a598500-1440x1799-jpg",
+        "_type": "reference"
+      }
+    },
+    {
+      "_key": "PKECkeRT",
+      "_type": "image",
+      "asset": {
+        "_ref": "image-3ab2777f463bb188af468e810a9367452c1c9d4e-1440x1799-jpg",
+        "_type": "reference"
+      }
+    }
+  ],
+  "title": "10.30.19"
+}
 
-export const sample: any[] = [
-  [],
-  [one],
-  [four, two, one, three],
-  [four, two, five, one, three],
-];
 
 module.exports = {
-  one, two, three, four, five, sample
+  one, two, three, four, five, six
 }
