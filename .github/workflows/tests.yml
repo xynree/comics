@@ -20,4 +20,4 @@ jobs:
       - name: Run Jest
         run: npm run test
       - name: Run Playwright tests
-        run: npm run dev && npm run e2e
+        run: npm run e2e
