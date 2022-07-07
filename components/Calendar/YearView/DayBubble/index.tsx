@@ -20,7 +20,7 @@ const DayBubble = ({comic, setActiveComic}:Props) => {
   return (
     <button
     type="button"
-    className={`rounded-full w-7 h-7 ${color} transition-all hover:opacity-90 hover:text-white text-slate-100/0 text-xs m-0.5 `  }
+    className={`rounded-full w-7 h-7 ${color} transition-all hover:opacity-90 hover:text-white text-slate-100/0 text-xs m-0.5 dayBubble`}
     onClick={() => setActiveComic(comic)}
   >
     <p className="pt-0.5">
