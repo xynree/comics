@@ -19,5 +19,7 @@ jobs:
         run: npx playwright install --with-deps
       - name: Run Jest
         run: npm run test
+      - name: Open Server
+        run: npm run dev
       - name: Run Playwright tests
         run: npm run e2e
