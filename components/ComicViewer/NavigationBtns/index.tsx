@@ -3,7 +3,11 @@ const {navigation, buttons} = {
   buttons: 'text-xs w-36 hover:[font-nw-thin] pt-2 pb-2 rounded-full hover:underline bg-[#FEFAEE]  transition-all'
 }
 
-const NavigationBtns = ({navigate}) => {
+interface Props {
+  navigate: (() => void)[]
+}
+
+const NavigationBtns = ({navigate}:Props) => {
   const [prev, home, next] = navigate
 
   return (
