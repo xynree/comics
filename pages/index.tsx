@@ -3,8 +3,13 @@ import comics_sorter from '../helpers/comics_sorter'
 import Main from '../components/Main';
 import client from '../cms/client';
 import Head from 'next/head'
+import {Comic} from '../types/types'
 
-export default function index({ comics }) {
+interface Props {
+  comics : Comic[]
+}
+
+export default function index({ comics }: Props) {
   return (
     <>
     <Head>

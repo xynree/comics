@@ -1,6 +1,6 @@
 import DayBubble from "./DayBubble";
 import comicsByMonth from "../../../helpers/comicsByMonth";
-import comicsInMo from "../../../helpers/comicsInMo";
+import filterByMonth from "../../../helpers/filterByMonth";
 
 const YearView = ({ comics, year, setActiveComic }) => {
   const navigateToYr = () => {
@@ -8,7 +8,7 @@ const YearView = ({ comics, year, setActiveComic }) => {
   };
 
   const navigateToMo = (mo) => {
-    setActiveComic(comicsInMo(comics, mo)[0]);
+    setActiveComic(filterByMonth(comics, mo)[0]);
   };
 
   return (
