@@ -1,4 +1,12 @@
-export default (comics) => {
+import { Comic } from '../types/types';
+
+type Years = {[year: string]: Comic[]}
+
+/**
+ * @param comics Complete list of comics
+ * @returns comics indexed by year
+ */
+const comicsByYear = (comics:Comic[]):Years => {
   const map = new Map();
   comics
     .forEach((comic) => {
@@ -11,3 +19,5 @@ export default (comics) => {
     });
   return Object.fromEntries(map);
 };
+
+export default comicsByYear;
