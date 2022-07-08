@@ -1,4 +1,4 @@
-import { one, two, three, four, five, six} from '../data/testData';
+import { one, two, four} from '../data/testData';
 import comicsByYear from '../helpers/comicsByYear';
 
 describe("comicsByYear Indexing Function", ()=>{
@@ -11,9 +11,5 @@ describe("comicsByYear Indexing Function", ()=>{
       "21": [one],
       "22": [two, four]
     })
-
   })
-
-
-
 })
