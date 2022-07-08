@@ -4,10 +4,11 @@ import { Comic } from "../types/types";
 type MonthGroup = [string, Comic[]];
 
 /**
- * @param comics Array of comics in a year
- * @returns { MonthGroup[] } sorted 2D array of comics in the year by month
+ * @param comics Array of comics in a specific year
+ * @returns { MonthGroup[] } 2D array of comics in the year by month
  */
 const comicsByMonth = (comics: Comic[]): MonthGroup[] => {
+  if (comics.length === 0) return [];
   const map = new Map();
   comics.forEach((comic) => {
     const [mo,,] = comic.title.split(".");

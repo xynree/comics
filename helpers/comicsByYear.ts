@@ -7,6 +7,7 @@ type Years = {[year: string]: Comic[]}
  * @returns comics indexed by year
  */
 const comicsByYear = (comics:Comic[]):Years => {
+  if (comics.length === 0) return {};
   const map = new Map();
   comics
     .forEach((comic) => {

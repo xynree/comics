@@ -15,8 +15,8 @@ const singleSort = (prev:Comic,curr:Comic) => {
   for (let i= 0; i<3; i++) {
     if (p[i] < c[i]) return -1;
     else if (p[i] > c[i]) return 1;
-
   }
+  return -1;
 }
 
 /** Base case for Merge Sort */
