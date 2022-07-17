@@ -8,7 +8,7 @@ const {navigation, buttons} = {
 
 interface Props {
   navigate: (() => void)[],
-  hasNavigate: [Comic|any,Comic|any]
+  hasNavigate: any[]
 }
 
 const NavigationBtns = ({navigate, hasNavigate}:Props) => {

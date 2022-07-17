@@ -16,7 +16,7 @@ const { container, comicTitle, comicView, comicDesc, comicStyle } = {
 interface Props {
   comic: Comic,
   navigate: (()=>void)[]
-  hasNavigate: [Comic|any, Comic|any]
+  hasNavigate: any[]
 }
 
 const ComicViewer = ({ comic, navigate, hasNavigate }: Props) => {

@@ -9,7 +9,7 @@ interface Props {
 
 const Main = ({ comics }: Props) => {
   const [comic, setActiveComic] = useState(comics[comics.length - 1]);
-  const [hasNavigate, setHasNavigate] = useState([])
+  const [hasNavigate, setHasNavigate] = useState([null,null])
   
   useEffect(()=> {
     const foundComicIndex = comics.findIndex(
