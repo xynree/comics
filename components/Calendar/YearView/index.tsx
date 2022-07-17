@@ -9,9 +9,10 @@ import { useState } from 'react';
 interface Props {
   comics: Comic[],
   year: string,
-  setActiveComic: Dispatch<SetStateAction<Comic>>
+  setActiveComic: Dispatch<SetStateAction<Comic>>,
+  comic
 }
-const YearView = ({ comics, year, setActiveComic }:Props) => {
+const YearView = ({ comics, year, setActiveComic, comic }:Props) => {
   const [comicsSorted,] = useState(comicsByMonth(comics))
   const navigateToYr = () => setActiveComic(comics[0]);
 
@@ -38,10 +39,11 @@ const YearView = ({ comics, year, setActiveComic }:Props) => {
             </button>
             <div className="bg-black w-[1px]"></div>
             <div className="flex flex-wrap ml-4 mb-2 mt-2 items-center">
-              {comics.map((comic) => (
+              {comics.map((eachComic) => (
                 <DayBubble
-                  comic={comic}
-                  key={comic._id}
+                  selectedComic={comic}
+                  comic={eachComic}
+                  key={eachComic._id}
                   setActiveComic={setActiveComic}
                 />
               ))}
