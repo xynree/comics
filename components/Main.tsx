@@ -36,7 +36,7 @@ const Main = ({ comics }: Props) => {
         {comic && <ComicViewer comic={comic} navigate={navigate} hasNavigate={hasNavigate} />}
       </div>
       <div className="hidden md:block md:w-1/3 md:h-full">
-        <Calendar comics={comics} setActiveComic={setActiveComic} />
+        <Calendar comics={comics} setActiveComic={setActiveComic} comic={comic} />
       </div>
     </main>
   );
