@@ -21,10 +21,10 @@ const DayBubble = ({comic, setActiveComic, selectedComic}:Props) => {
   return (
     <button
     type="button"
-    className={`rounded-full w-7 h-7  ${selectedComic._id === comic._id? 'border-4 border-gray-700':''} ${color}  transition-all hover:opacity-90 hover:text-white text-slate-100/0 text-xs m-0.5`}
+    className={`rounded-full w-7 h-7  ${selectedComic._id === comic._id? 'border-4 border-gray-700 text-slate-800':'text-slate-100/0'} ${color}  transition-all hover:opacity-90 hover:text-slate-800  text-xs m-0.5`}
     onClick={() => setActiveComic(comic)}
   >
-    <p className="pt-0.5">
+    <p className="pt-0.5 " style={{fontSize: '0.72rem'}}>
       {comic.title.split('.')[1]}
     </p>
   </button>
