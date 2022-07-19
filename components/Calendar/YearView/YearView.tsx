@@ -1,4 +1,4 @@
-import DayBubble from "./DayBubble";
+import DayBubble from "./DayBubble/DayBubble";
 import comicsByMonth from "../../../helpers/comicsByMonth";
 import filterByMonth from "../../../helpers/filterByMonth";
 import { Dispatch, SetStateAction } from "react";

@@ -1,5 +1,5 @@
-import ComicViewer from "./ComicViewer";
-import Calendar from "./Calendar";
+import ComicViewer from "./ComicViewer/ComicViewer";
+import Calendar from "./Calendar/Calendar";
 import { useState, useEffect } from "react";
 import { Comic } from "../types/types";
 

@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useState } from "react";
-import YearView from "./YearView";
+import YearView from "./YearView/YearView";
 import comicsByYear from '../../helpers/comicsByYear';
 import { Comic } from '../../types/types';
 
