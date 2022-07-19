@@ -1,6 +1,6 @@
 import type { PlaywrightTestConfig } from '@playwright/test';
 import { devices } from '@playwright/test';
-require('dotenv').config()
+require("dotenv").config({ path: './.env.local' });
 
 /**
  * See https://playwright.dev/docs/test-configuration.
