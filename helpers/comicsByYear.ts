@@ -1,4 +1,4 @@
-import { Comic } from '../types/types';
+import { Comic } from '@types';
 
 type Years = {[year: string]: Comic[]}
 
@@ -6,7 +6,7 @@ type Years = {[year: string]: Comic[]}
  * @param comics Complete list of comics
  * @returns comics indexed by year
  */
-const comicsByYear = (comics:Comic[]):Years => {
+ export const comicsByYear = (comics:Comic[]):Years => {
   if (comics.length === 0) return {};
   const map = new Map();
   comics
@@ -20,5 +20,3 @@ const comicsByYear = (comics:Comic[]):Years => {
     });
   return Object.fromEntries(map);
 };
-
-export default comicsByYear;

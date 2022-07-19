@@ -1,8 +1,7 @@
+import { useState, useEffect } from "react";
+import { Comic } from "@types"
 import ComicViewer from "./ComicViewer/ComicViewer";
 import Calendar from "./Calendar/Calendar";
-import { useState, useEffect } from "react";
-import { Comic } from "../types/types";
-
 interface Props {
   comics: Comic[];
 }

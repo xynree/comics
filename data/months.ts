@@ -1,7 +1,5 @@
 const tuple = <month extends string[]>(...args: month) => args;
-export type monthsType = typeof months[number];
-
-const months = tuple(
+export const months = tuple(
   "jan",
   "feb",
   "mar",
@@ -16,4 +14,3 @@ const months = tuple(
   "dec",
 );
 
-export default months;

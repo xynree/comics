@@ -1,5 +1,5 @@
-import months from "../data/months";
-import { Comic } from "../types/types";
+import { Comic } from "@types";
+import { months } from "@data";
 
 type MonthGroup = [string, Comic[]];
 
@@ -7,7 +7,7 @@ type MonthGroup = [string, Comic[]];
  * @param comics Array of comics in a specific year
  * @returns { MonthGroup[] } 2D array of comics in the year by month
  */
-const comicsByMonth = (comics: Comic[]): MonthGroup[] => {
+export const comicsByMonth = (comics: Comic[]): MonthGroup[] => {
   if (comics.length === 0) return [];
   const map = new Map();
   comics.forEach((comic) => {
@@ -24,4 +24,3 @@ const comicsByMonth = (comics: Comic[]): MonthGroup[] => {
   .map((mo) => [mo[0], mo[1]]);
 };
 
-export default comicsByMonth;

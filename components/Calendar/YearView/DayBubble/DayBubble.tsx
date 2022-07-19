@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useState } from 'react';
-import { Comic } from '../../../../types/types';
+import { Comic } from '@types';
 
 const COLORS = [
   'bg-[#869D89]',

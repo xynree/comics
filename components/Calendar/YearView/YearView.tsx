@@ -1,22 +1,19 @@
+import { Dispatch, SetStateAction, useState } from "react";
 import DayBubble from "./DayBubble/DayBubble";
-import comicsByMonth from "../../../helpers/comicsByMonth";
-import filterByMonth from "../../../helpers/filterByMonth";
-import { Dispatch, SetStateAction } from "react";
-import { Comic } from "../../../types/types";
-import { monthsType } from "../../../data/months";
-import { useState } from 'react';
+import { comicsByMonth, filterByMonth } from "@helpers";
+import { Comic, Months } from "@types";
 
 interface Props {
   comics: Comic[],
   year: string,
   setActiveComic: Dispatch<SetStateAction<Comic>>,
-  comic
+  comic: Comic|any
 }
 const YearView = ({ comics, year, setActiveComic, comic }:Props) => {
   const [comicsSorted,] = useState(comicsByMonth(comics))
   const navigateToYr = () => setActiveComic(comics[0]);
 
-  const navigateToMo = (mo:monthsType) => setActiveComic(filterByMonth(comics, mo)[0]);
+  const navigateToMo = (mo:Months) => setActiveComic(filterByMonth(comics, mo)[0]);
 
   return (
     <div className="flex flex-col" key={year}>
@@ -29,7 +26,7 @@ const YearView = ({ comics, year, setActiveComic, comic }:Props) => {
         </button>
       </div>
       <div>
-        {comicsSorted.map(([mo, comics]:[monthsType, Comic[]]) => (
+        {comicsSorted.map(([mo, comics]:[Months, Comic[]]) => (
           <div className="flex justify-start " key={`${year}-${mo}`}>
             <button
               className="w-12 font-bold flex-shrink-0  right-outline pt-2 hover:text-red-300 transition-all"

@@ -1,10 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
-import comics_sorter from '../helpers/comics_sorter'
+import Head from 'next/head'
+import { comics_sorter } from '@helpers'
+import {Comic} from '@types'
 import Main from '../components/Main';
 import client from '../cms/client';
-import Head from 'next/head'
-import {Comic} from '../types/types'
-
 interface Props {
   comics : Comic[]
 }

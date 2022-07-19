@@ -1,5 +1,4 @@
-import { Comic } from "../types/types";
-
+import { Comic } from "@types";
 
 /** Formula for sorting comics */
 const singleSort = (prev:Comic,curr:Comic) => {
@@ -53,10 +52,8 @@ const mergeSort = (arr:any[]):any[] => {
  * @param comics Full list of comics
  * @returns Full list of comics sorted by month and year.
 */
-const comics_sorter = (comics: Comic[]) =>{
+export const comics_sorter = (comics: Comic[]) =>{
 
   return mergeSort(comics);
 
 };
-
-export default comics_sorter;

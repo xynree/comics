@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@helpers": ["helpers/index.ts"],
+      "@types": ["types/index.ts"],
+      "@data": ["data/index.ts"]
+    },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
