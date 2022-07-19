@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { getSrcFromImg } from "../../cms/imageHelpers";
-import About from "../About";
-import NavigationBtns from "./NavigationBtns";
+import About from "../About/About";
+import NavigationBtns from "./NavigationBtns/NavigationBtns";
 import { Comic } from '../../types/types';
 
 const { container, comicTitle, comicView, comicDesc, comicStyle } = {
