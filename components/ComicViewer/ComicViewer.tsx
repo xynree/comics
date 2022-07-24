@@ -16,17 +16,17 @@ const { container, comicTitle, comicView, comicDesc, comicStyle } = {
 interface Props {
   comic: Comic,
   navigate: (()=>void)[]
-  hasNavigate: any[]
+  prevNext: any[]
 }
 
-const ComicViewer = ({ comic, navigate, hasNavigate }: Props) => {
+const ComicViewer = ({ comic, navigate, prevNext }: Props) => {
   const { images, title, description } = comic;
 
   return (
     <div className={container}>
       <div className={comicTitle}>{title}</div>
       <div className={comicView}>
-        <NavigationBtns navigate={navigate} hasNavigate={hasNavigate} />
+        <NavigationBtns navigate={navigate} prevNext={prevNext} />
         {images?.map((image) => (
           <img
             key={image._key}

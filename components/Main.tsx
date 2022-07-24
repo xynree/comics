@@ -8,31 +8,31 @@ interface Props {
 
 const Main = ({ comics }: Props) => {
   const [comic, setActiveComic] = useState(comics[comics.length - 1]);
-  const [hasNavigate, setHasNavigate] = useState([null,null])
+  const [prevNext, setPrevNext] = useState([null,null])
   
   useEffect(()=> {
     const foundComicIndex = comics.findIndex(
       (comicDir) => comicDir._id === comic._id
     );
-    setHasNavigate([comics[foundComicIndex -1],comics[foundComicIndex +1]]);
+    setPrevNext([comics[foundComicIndex -1],comics[foundComicIndex +1]]);
   },[comics, comic])
 
   const navigate = [
     (): void => {
-      if (hasNavigate[0]) return setActiveComic(hasNavigate[0]);
+      if (prevNext[0]) return setActiveComic(prevNext[0]);
     },
     (): void => {
       return setActiveComic(comics[comics.length - 1]);
     },
     (): void => {
-      if (hasNavigate[1]) return setActiveComic(hasNavigate[1]);
+      if (prevNext[1]) return setActiveComic(prevNext[1]);
     },
   ];
 
   return (
     <main className="flex flex-col md:flex-row w-screen h-screen font-nw-bold">
       <div className="w-full h-screen overflow-auto no-scrollbar bg-[#FEFAEE] md:w-2/3 md:h-full md:bg-white">
-        {comic && <ComicViewer comic={comic} navigate={navigate} hasNavigate={hasNavigate} />}
+        {comic && <ComicViewer comic={comic} navigate={navigate} prevNext={prevNext} />}
       </div>
       <div className="hidden md:block md:w-1/3 md:h-full">
         <Calendar comics={comics} setActiveComic={setActiveComic} comic={comic} />

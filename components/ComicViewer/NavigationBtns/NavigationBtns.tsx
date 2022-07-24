@@ -6,17 +6,17 @@ const {navigation, buttons} = {
 
 interface Props {
   navigate: (() => void)[],
-  hasNavigate: any[]
+  prevNext: any[]
 }
 
-const NavigationBtns = ({navigate, hasNavigate}:Props) => {
+const NavigationBtns = ({navigate, prevNext}:Props) => {
   const [prev, home, next] = navigate
 
   return (
     <div className={navigation}>
-     <button style={{'visibility': hasNavigate[0]? 'visible':'hidden'}}className={buttons}  onClick={prev} >prev</button>
+     <button style={{'visibility': prevNext[0]? 'visible':'hidden'}} className={buttons}  onClick={prev} >prev</button>
      <button className={buttons} onClick={home}>home</button>
-     <button style={{'visibility': hasNavigate[1]? 'visible':'hidden'}} className={buttons} onClick={next} >next</button>
+     <button style={{'visibility': prevNext[1]? 'visible':'hidden'}} className={buttons} onClick={next} >next</button>
     </div>
   );
 }
