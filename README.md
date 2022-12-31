@@ -2,6 +2,10 @@
 
 ## About
 This is a personal site to host my ongoing diary comics making practice.
+This is deployed [here](http://comics.xinrui.work)
+![image](https://user-images.githubusercontent.com/77255525/210125976-c9a1093b-36b0-4526-b64e-5cf34a226356.png)
+
+
 
 ## Usage
 Run `npm run dev` to view locally.
